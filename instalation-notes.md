@@ -20,6 +20,7 @@ cd redis-2.6.16
 make
 ```
 
+<<<<<<< HEAD
 2. Run builded Redis `src/redis-server --port 6164`
 
 possible issues
@@ -27,3 +28,6 @@ possible issues
 1) Can't reload Nginx
 `nginx: [alert] could not open error log file: open() "/opt/nginx-20131029/nginx/logs/error.log" failed (13: Permission denied)`
 to fix this message link must be created, find actual file location `find / -name nginx.pid 2>/dev/null`  then create required dir `mkdir -p /opt/nginx-20131029/nginx/logs/`, after that create link `ln -s /actual/location/nginx.pid /opt/nginx-20131029/nginx/logs/nginx.pid`
+=======
+2. Run builded Redis `src/redis-server --port 6164`
+>>>>>>> a774e07d6e246d6b70c721b43b69a72c68c71058
