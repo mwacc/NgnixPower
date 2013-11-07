@@ -10,7 +10,7 @@ local res = ngx.location.capture("/backend/redis/eval",
 --     "redis.call('DECR',KEYS[1]..'k'); return 'test'", arg1="1", arg2=ad_id} }
 )
 
-io.stderr:write(res.body)
+
 if res.status ~= 200 then
     ngx.exit(res.status)
 elseif res.body == "$-1\r\n" then
