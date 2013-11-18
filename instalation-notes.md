@@ -34,9 +34,10 @@ possible issues
 to fix this message link must be created, find actual file location `find / -name nginx.pid 2>/dev/null`  then create required dir `mkdir -p /opt/nginx-20131029/nginx/logs/`, after that create link `ln -s /actual/location/nginx.pid /opt/nginx-20131029/nginx/logs/nginx.pid`
 2. not enough open file descriptors
 to ncrease them w/ `ulimit -n 25000`
-3. install python redis lib to fill up redis w/ dummy dataset:
-    sudo apt-get install python-pip
-    sudo pip install redis
+3. install python redis lib to fill up redis w/ dummy dataset:  
+    ```sudo apt-get install python-pip
+       sudo pip install redis
+     ```
 
 curl samples
 ============  
