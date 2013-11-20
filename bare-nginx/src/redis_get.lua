@@ -16,6 +16,8 @@ if res.status ~= 200 then
 elseif res.body == "$-1\r\n" then
     ngx.exit(404)
 else
-    ngx.say( tostring(parser.parse_reply( tostring(res.body) )) )
+	local res = tostring(parser.parse_reply( tostring(res.body) ))
+	ngx.var.foo = res
+    ngx.say( res )
 end 
 

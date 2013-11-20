@@ -3,6 +3,7 @@ local cjson = require "cjson"
 
 local age = ngx.var.age
 
+
 local db, err = mysql:new()
 if not db then
 	io.stderr:write("failed to instantiate mysql: "..err)
@@ -26,7 +27,7 @@ end
 -- run a select query, expected about 10 rows in
 -- the result set:
 res, err, errno, sqlstate =
-    db:query("select * from cnt where age between 20 and 30 ")
+    db:query("select * from cnt where age between 20 and  "..age)
 if not res then
 	io.stderr:write("bad result: "..err..": "..errno..": "..sqlstate)
     ngx.exit(503)
